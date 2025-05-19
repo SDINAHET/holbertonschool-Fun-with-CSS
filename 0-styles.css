@@ -1,0 +1,59 @@
+/* Applique un fond gris clair sur toute la page */
+body {
+  margin: 0;
+  background-color: #ffffff; /* ✅ plus proche du fond de la consigne */
+  font-family: 'Cinzel', serif;
+}
+
+/* Liste horizontale */
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 100px 0;
+  margin: 0;
+  background-color: white;
+}
+
+/* Carte techno (HTML, CSS, JS) */
+li {
+  width: 220px; /* ✅ un peu plus large pour équilibre visuel */
+  height: 340px; /* ✅ un peu plus haut pour mieux centrer le logo */
+  background-color: #f5f5f5; /* ✅ même gris que le fond */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Icône du sprite centrée */
+.icon {
+  width: 216px;
+  height: 226px;
+  background-image: url('0-sprite.png');
+  background-repeat: no-repeat;
+  background-size: 648px 226px;
+  margin-top: 20px; /* ✅ espace au-dessus du logo */
+}
+
+/* Positions du sprite */
+.i-html {
+  background-position: 0 0;
+}
+
+.i-css {
+  background-position: -216px 0;
+}
+
+.i-js {
+  background-position: -432px 0;
+}
