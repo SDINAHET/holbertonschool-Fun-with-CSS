@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;          /* Retire le soulignement natif */
+  position: relative;             /* Permet de positionner ::after par rapport à <a> */
+  color: #d73953;                 /* Couleur imposée */
+  font-weight: bold;              /* Pour garder le style */
+}
+
+/* Ligne animée sous le lien */
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #d73953;      /* Même couleur que le lien */
+  transition: width 0.4s ease;    /* Animation fluide */
+}
+
+/* Animation au hover */
+a:hover::after {
+  width: 100%;                    /* Déploie toute la largeur */
+}
