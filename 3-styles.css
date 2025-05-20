@@ -91,7 +91,7 @@
 }
 
 /* Activation des icônes au clic */
-.menu-open:checked ~ .menu-item:nth-child(3) {
+/* .menu-open:checked ~ .menu-item:nth-child(3) {
   transform: translateY(80px) scale(1);
 }
 
@@ -109,10 +109,10 @@
 
 .menu-open:checked ~ .menu-item:nth-child(7) {
   transform: translateY(400px) scale(1);
-}
+}*/
 
 /* Animation croix */
-.menu-open:checked + .menu-open-button .menu-line-1 {
+/*.menu-open:checked + .menu-open-button .menu-line-1 {
   transform: rotate(45deg);
   top: 38px;
 }
@@ -122,6 +122,41 @@
 }
 
 .menu-open:checked + .menu-open-button .menu-line-3 {
+  transform: rotate(-45deg);
+  top: 38px;
+} */
+
+.menu:hover .menu-item:nth-child(3) {
+  transform: translateY(80px) scale(1);
+}
+
+.menu:hover .menu-item:nth-child(4) {
+  transform: translateY(160px) scale(1);
+}
+
+.menu:hover .menu-item:nth-child(5) {
+  transform: translateY(240px) scale(1);
+}
+
+.menu:hover .menu-item:nth-child(6) {
+  transform: translateY(320px) scale(1);
+}
+
+.menu:hover .menu-item:nth-child(7) {
+  transform: translateY(400px) scale(1);
+}
+
+/* Lignes du burger en croix au survol */
+.menu:hover .menu-line-1 {
+  transform: rotate(45deg);
+  top: 38px;
+}
+
+.menu:hover .menu-line-2 {
+  opacity: 0;
+}
+
+.menu:hover .menu-line-3 {
   transform: rotate(-45deg);
   top: 38px;
 }
