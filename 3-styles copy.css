@@ -1,0 +1,83 @@
+.menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  width: 80px;
+  z-index: 1000;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open-button {
+  background: #d73953;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.menu-line {
+  position: absolute;
+  height: 4px;
+  width: 40px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.menu-line-1 { top: 26px; }
+.menu-line-2 { top: 38px; }
+.menu-line-3 { top: 50px; }
+
+.menu-item {
+  background: #d73953;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 10px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 60px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+/* Position verticale vers le bas */
+.menu-item:nth-child(3) { top: 90px; }
+.menu-item:nth-child(4) { top: 170px; }
+.menu-item:nth-child(5) { top: 250px; }
+.menu-item:nth-child(6) { top: 330px; }
+.menu-item:nth-child(7) { top: 410px; }
+
+/* ✅ Active les icônes au clic */
+.menu-open:checked ~ .menu-item {
+  transform: scale(1);
+}
+
+/* ✅ Animation croix */
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(45deg);
+  top: 38px;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  opacity: 0;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  transform: rotate(-45deg);
+  top: 38px;
+}

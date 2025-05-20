@@ -1,162 +1,105 @@
-/* Configuration générale du menu */
-.menu {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 80px;
-  width: 80px;
-  z-index: 1000;
-}
-
-/* Cacher la checkbox */
 .menu-open {
-  display: none;
+	display: none;
 }
 
-/* Bouton rouge principal */
 .menu-open-button {
-  background: #d73953;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
+	width: 80px;
+	height: 80px;
+	background-color: #e1003c;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	margin-bottom: 2rem;
+	z-index: 10;
 }
 
-/* Lignes du burger */
 .menu-line {
-  position: absolute;
-  height: 4px;
-  width: 40px;
-  background: white;
-  transition: all 0.3s;
+	width: 35px;
+	height: 4px;
+	background-color: white;
+	margin: 6px auto;
+	transition: all 0.3s ease;
+}
+
+.menu-line-1,
+.menu-line-2,
+.menu-line-3 {
+	position: absolute;
 }
 
 .menu-line-1 {
-  top: 26px;
+	top: 20px;
 }
 
 .menu-line-2 {
-  top: 38px;
+	top: 32px;
 }
 
 .menu-line-3 {
-  top: 50px;
+	bottom: 20px;
 }
 
-/* Icônes menu */
-.menu-item {
-  background: #d73953;
-  color: white;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 24px;
-  text-align: center;
-  line-height: 60px;
-  transform: scale(0);
-  transition: transform 0.3s ease;
-}
-
-/* Position des icônes (verticaux) */
-.menu-item:nth-child(3) {
-  transform: translateY(80px) scale(0);
-}
-
-.menu-item:nth-child(4) {
-  transform: translateY(160px) scale(0);
-}
-
-.menu-item:nth-child(5) {
-  transform: translateY(240px) scale(0);
-}
-
-.menu-item:nth-child(6) {
-  transform: translateY(320px) scale(0);
-}
-
-.menu-item:nth-child(7) {
-  transform: translateY(400px) scale(0);
-}
-
-/* Activation des icônes au clic */
-/* .menu-open:checked ~ .menu-item:nth-child(3) {
-  transform: translateY(80px) scale(1);
-}
-
-.menu-open:checked ~ .menu-item:nth-child(4) {
-  transform: translateY(160px) scale(1);
-}
-
-.menu-open:checked ~ .menu-item:nth-child(5) {
-  transform: translateY(240px) scale(1);
-}
-
-.menu-open:checked ~ .menu-item:nth-child(6) {
-  transform: translateY(320px) scale(1);
-}
-
-.menu-open:checked ~ .menu-item:nth-child(7) {
-  transform: translateY(400px) scale(1);
-}*/
-
-/* Animation croix */
-/*.menu-open:checked + .menu-open-button .menu-line-1 {
-  transform: rotate(45deg);
-  top: 38px;
+.menu-open:checked + .menu-open-button .menu-line-1 {
+	transform: rotate(45deg);
+	top: 32px;
 }
 
 .menu-open:checked + .menu-open-button .menu-line-2 {
-  opacity: 0;
+	opacity: 0;
 }
 
 .menu-open:checked + .menu-open-button .menu-line-3 {
-  transform: rotate(-45deg);
-  top: 38px;
-} */
-
-.menu:hover .menu-item:nth-child(3) {
-  transform: translateY(80px) scale(1);
+	transform: rotate(-45deg);
+	bottom: 32px;
 }
 
-.menu:hover .menu-item:nth-child(4) {
-  transform: translateY(160px) scale(1);
+.menu-item {
+	background-color: #e1003c;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	opacity: 0;
+	transform: translateY(-600%);
+	pointer-events: none;
+	transition: opacity 0.3s ease transform 0.3s ease;
 }
 
-.menu:hover .menu-item:nth-child(5) {
-  transform: translateY(240px) scale(1);
+.menu-open:checked ~ .menu-item {
+	opacity: 1;
+	transform: translateY(100px);
+	pointer-events: auto;
 }
 
-.menu:hover .menu-item:nth-child(6) {
-  transform: translateY(320px) scale(1);
+.menu-item:hover {
+	background-color: white;
+	border-radius: 50%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #e1003c;
 }
 
-.menu:hover .menu-item:nth-child(7) {
-  transform: translateY(400px) scale(1);
+a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	width: 80px;
+	height: 80px;
+	margin-bottom: 1rem;
 }
 
-/* Lignes du burger en croix au survol */
-.menu:hover .menu-line-1 {
-  transform: rotate(45deg);
-  top: 38px;
+a:last-child {
+	margin-bottom: 0;
 }
 
-.menu:hover .menu-line-2 {
-  opacity: 0;
+.fa {
+	color: white;
+	font-size: 30px;
 }
 
-.menu:hover .menu-line-3 {
-  transform: rotate(-45deg);
-  top: 38px;
+.menu-item:hover .fa {
+	color: #e1003c;
+	font-size: 30px;
 }
